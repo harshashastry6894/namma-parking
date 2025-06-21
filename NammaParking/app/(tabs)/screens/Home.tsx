@@ -1,4 +1,3 @@
-// screens/Home.js
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, useColorScheme } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';

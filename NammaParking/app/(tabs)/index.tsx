@@ -2,7 +2,7 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import Header from '@/components/ui/Header';
-import Home from '@/components/ui/Home';
+import Home from './screens/Home';
 
 export default function HomeScreen() {
   return (
