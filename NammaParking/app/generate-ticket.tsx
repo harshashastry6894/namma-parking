@@ -1,4 +1,3 @@
-// screens/GenerateTicket.tsx
 import React from 'react';
 import { View, Text, TextInput, Button, StyleSheet, useColorScheme } from 'react-native';
 

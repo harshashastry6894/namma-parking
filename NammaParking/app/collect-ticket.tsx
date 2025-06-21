@@ -1,4 +1,3 @@
-// screens/CollectTicket.tsx
 import React from 'react';
 import { View, Text, Button, StyleSheet, useColorScheme } from 'react-native';
 

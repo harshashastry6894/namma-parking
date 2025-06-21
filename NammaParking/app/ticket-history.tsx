@@ -1,4 +1,3 @@
-// screens/TicketHistory.tsx
 import React from 'react';
 import { View, Text, FlatList, StyleSheet, useColorScheme } from 'react-native';
 
