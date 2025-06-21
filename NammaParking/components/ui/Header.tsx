@@ -10,8 +10,8 @@ const Header: React.FC = () => {
 
   return (
     <View style={[styles.container, { backgroundColor: theme.card }]}>
-      <FontAwesome5 name="parking" size={28} color={theme.text} style={styles.icon} />
-      <Text style={[styles.title, { color: theme.text }]}>Namma Parking</Text>
+      <FontAwesome5 name="parking" size={28} color={theme.buttonText} style={styles.icon} />
+      <Text style={[styles.title, { color: theme.buttonText }]}>Namma Parking</Text>
     </View>
   );
 };

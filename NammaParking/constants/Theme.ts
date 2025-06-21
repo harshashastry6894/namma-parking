@@ -9,9 +9,10 @@ export type Theme = {
 export const lightTheme: Theme = {
   background: '#F8F9FA',
   card: '#1976D2',
-  text: '#FFFFFF',
+  text: '#212121',
   buttonText: '#FFFFFF',
 };
+
 
 export const darkTheme: Theme = {
   background: '#121212',
