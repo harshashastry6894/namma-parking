@@ -2,14 +2,13 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import Header from '@/components/ui/Header';
-import Home from './screens/Home';
+import Home from '@/components/ui/Home';
 
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
       <Header />
       <Home />
-      {/* Future content like ticket generation, history, etc. */}
     </View>
   );
 }
