@@ -1,20 +1,23 @@
-// components/Header.js
+// components/Header.tsx
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, useColorScheme } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
+import { lightTheme, darkTheme } from '@/constants/Theme';
 
-const Header = () => {
+const Header: React.FC = () => {
+  const scheme = useColorScheme();
+  const theme = scheme === 'dark' ? darkTheme : lightTheme;
+
   return (
-    <View style={styles.container}>
-      <FontAwesome5 name="parking" size={28} color="#FFFFFF" style={styles.icon} />
-      <Text style={styles.title}>Namma Parking</Text>
+    <View style={[styles.container, { backgroundColor: theme.card }]}>
+      <FontAwesome5 name="parking" size={28} color={theme.text} style={styles.icon} />
+      <Text style={[styles.title, { color: theme.text }]}>Namma Parking</Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#1976D2',
     paddingTop: 60,
     paddingBottom: 20,
     flexDirection: 'row',
@@ -29,7 +32,6 @@ const styles = StyleSheet.create({
     marginRight: 8,
   },
   title: {
-    color: '#FFFFFF',
     fontSize: 26,
     fontWeight: '600',
   },
