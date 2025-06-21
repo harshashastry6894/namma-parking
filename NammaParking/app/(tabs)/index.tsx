@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import Header from '@/components/ui/Header';
@@ -8,7 +7,9 @@ export default function HomeScreen() {
   return (
     <View style={styles.container}>
       <Header />
-      <Home />
+      <View style={styles.content}>
+        <Home />
+      </View>
     </View>
   );
 }
@@ -16,6 +17,10 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F8F9FA',
+  },
+  content: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
