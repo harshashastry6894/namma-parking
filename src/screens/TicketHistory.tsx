@@ -2,6 +2,7 @@
 import React from 'react';
 import { View, Text, FlatList, StyleSheet } from 'react-native';
 import ScreenLayout from '../components/ScreenLayout';
+import Header from '../components/Header';
 
 const dummyTickets = [
   { id: '1', title: 'KA-01-AB-1234 - 22 June 2025, 10:00AM' },
@@ -10,13 +11,15 @@ const dummyTickets = [
 
 export default function TicketHistory() {
   return (
-    <ScreenLayout>
+    <ScreenLayout showBackButton>
       <View style={styles.container}>
         <Text style={styles.title}>Ticket History</Text>
         <FlatList
           data={dummyTickets}
-          keyExtractor={(item) => item.id}
-          renderItem={({ item }) => <Text style={styles.item}>{item.title}</Text>}
+          keyExtractor={item => item.id}
+          renderItem={({ item }) => (
+            <Text style={styles.item}>{item.title}</Text>
+          )}
         />
       </View>
     </ScreenLayout>
@@ -26,5 +29,10 @@ export default function TicketHistory() {
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 20 },
   title: { fontSize: 24, fontWeight: '600', marginBottom: 20 },
-  item: { fontSize: 16, paddingVertical: 8, borderBottomWidth: 0.5, borderColor: '#ccc' },
+  item: {
+    fontSize: 16,
+    paddingVertical: 8,
+    borderBottomWidth: 0.5,
+    borderColor: '#ccc',
+  },
 });

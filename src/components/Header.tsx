@@ -1,14 +1,25 @@
 // components/Header.tsx
 import React from 'react';
-import { View, Text, StyleSheet, Platform } from 'react-native';
+import { View, Text, StyleSheet, Platform, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import { useNavigation } from '@react-navigation/native';
 import { useTheme } from '../context/ThemeContext';
 
-const Header: React.FC = () => {
+type HeaderProps = {
+  showBackButton?: boolean;
+};
+
+const Header: React.FC<HeaderProps> = ({ showBackButton = false }) => {
   const theme = useTheme();
+  const navigation = useNavigation();
 
   return (
     <View style={[styles.container, { backgroundColor: theme.card, shadowColor: theme.text }]}>
+      {showBackButton && (
+        <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
+          <Icon name="arrow-left" size={18} color={theme.text} />
+        </TouchableOpacity>
+      )}
       <Icon name="parking" size={24} color={theme.text} style={styles.icon} />
       <Text style={[styles.title, { color: theme.text }]}>Namma Parking</Text>
     </View>
@@ -38,6 +49,12 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: '700',
     letterSpacing: 0.8,
+  },
+  backButton: {
+    position: 'absolute',
+    left: 20,
+    top: Platform.OS === 'ios' ? 62 : 52,
+    padding: 8,
   },
 });
 

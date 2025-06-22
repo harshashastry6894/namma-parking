@@ -6,14 +6,15 @@ import { useTheme } from '../context/ThemeContext';
 
 type Props = {
   children: React.ReactNode;
+  showBackButton?: boolean;
 };
 
-const ScreenLayout = ({ children }: Props) => {
+const ScreenLayout = ({ children, showBackButton = false }: Props) => {
   const theme = useTheme();
 
   return (
     <SafeAreaView style={[styles.safeArea, { backgroundColor: theme.background }]}>
-      <Header />
+      <Header showBackButton={showBackButton} />
       <View style={styles.content}>{children}</View>
     </SafeAreaView>
   );
