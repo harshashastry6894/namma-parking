@@ -1,6 +1,6 @@
 // src/components/ScreenLayout.tsx
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, SafeAreaView } from 'react-native';
 import Header from './Header';
 import { useTheme } from '../context/ThemeContext';
 
@@ -12,15 +12,15 @@ const ScreenLayout = ({ children }: Props) => {
   const theme = useTheme();
 
   return (
-    <View style={[styles.container, { backgroundColor: theme.background }]}>
+    <SafeAreaView style={[styles.safeArea, { backgroundColor: theme.background }]}>
       <Header />
       <View style={styles.content}>{children}</View>
-    </View>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
+  safeArea: {
     flex: 1,
   },
   content: {
