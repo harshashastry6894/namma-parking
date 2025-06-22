@@ -1,17 +1,16 @@
 // components/Header.tsx
 import React from 'react';
-import { View, Text, StyleSheet, useColorScheme, Platform } from 'react-native';
+import { View, Text, StyleSheet, Platform } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import { lightTheme, darkTheme } from '../constants/theme'; // adjust path if needed
+import { useTheme } from '../context/ThemeContext';
 
 const Header: React.FC = () => {
-  const scheme = useColorScheme();
-  const theme = scheme === 'dark' ? darkTheme : lightTheme;
+  const theme = useTheme();
 
   return (
     <View style={[styles.container, { backgroundColor: theme.card, shadowColor: theme.text }]}>
-      <Icon name="parking" size={24} color={theme.buttonText} style={styles.icon} />
-      <Text style={[styles.title, { color: theme.buttonText }]}>Namma Parking</Text>
+      <Icon name="parking" size={24} color={theme.text} style={styles.icon} />
+      <Text style={[styles.title, { color: theme.text }]}>Namma Parking</Text>
     </View>
   );
 };

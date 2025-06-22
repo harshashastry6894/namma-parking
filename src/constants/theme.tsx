@@ -1,7 +1,8 @@
 export type Theme = {
   background: string;
-  card: string;
   text: string;
+  card: string;
+  button: string;
   buttonText: string;
 };
 
@@ -10,6 +11,7 @@ export const lightTheme: Theme = {
   card: '#1976D2',
   text: '#000',
   buttonText: '#FFFFFF',
+  button: '#1976D2',
 };
 
 export const darkTheme: Theme = {
@@ -17,4 +19,5 @@ export const darkTheme: Theme = {
   card: '#1E88E5',
   text: '#FFFFFF',
   buttonText: '#FFFFFF',
+  button: '#1E88E5',
 };
