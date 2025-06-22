@@ -5,9 +5,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from '../screens/Home';
 import AboutUs from '../screens/AboutUs';
-// import GenerateTicket from '../screens/GenerateTicket';
-// import CancelTicket from '../screens/CancelTicket';
-// import TicketHistory from '../screens/TicketHistory';
+import GenerateTicket from '../screens/GenerateTicket';
+import CollectTicket from '../screens/CollectTicket';
+import TicketHistory from '../screens/TicketHistory';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { useTheme } from '../context/ThemeContext';
 
@@ -18,9 +18,9 @@ function HomeStack() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="HomeMain" component={Home} />
-      {/* <Stack.Screen name="GenerateTicket" component={GenerateTicket} />
-      <Stack.Screen name="CancelTicket" component={CancelTicket} />
-      <Stack.Screen name="TicketHistory" component={TicketHistory} /> */}
+      <Stack.Screen name="GenerateTicket" component={GenerateTicket} />
+      <Stack.Screen name="CollectTicket" component={CollectTicket} />
+      <Stack.Screen name="TicketHistory" component={TicketHistory} />
     </Stack.Navigator>
   );
 }

@@ -22,7 +22,7 @@ export default function Home() {
         <CustomButton
           label="Collect Ticket"
           icon="cash-register"
-          onPress={() => navigation.navigate('CancelTicket')} // You can rename this screen if needed
+          onPress={() => navigation.navigate('CollectTicket')} // You can rename this screen if needed
           themeColor={theme}
         />
         <CustomButton
